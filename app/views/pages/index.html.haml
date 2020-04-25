@@ -1,17 +1,12 @@
-%h1 Listing pages
+.row
+  .col
+    %h1= t('pages.listing')
+  .col.text-right
+    = link_to 'New Page', new_page_path, class: 'btn btn-sm btn-secondary'
 
-%table
-  %thead
-    %tr
-      %th
-      %th
-      %th
-
-  %tbody
-    - @pages.each do |page|
-      %tr
-        %td
+.row
+  .col
+    %ul
+      - @pages.each do |page|
+        %li
           = link_to page.name, page
-%br
-
-= link_to 'New Page', new_page_path

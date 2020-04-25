@@ -1,7 +1,8 @@
 %h1.lead.border-bottom= @page.name
 
 .mb-3.text-right
-  = link_to 'Edit', edit_page_path(@page)
-  \|
-  = link_to 'Destroy', @page, method: :delete, data: { confirm: 'Are you sure?' }
+  %small
+    = link_to t('actions.edit'), edit_page_path(@page)
+    \|
+    = link_to t('actions.destroy'), @page, method: :delete, data: { confirm: 'Are you sure?' }
 
