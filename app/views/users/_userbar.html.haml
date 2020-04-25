@@ -1,4 +1,6 @@
 %ul.list-inline.text-right.my-1
+  %li.list-inline-item
+    = fa_icon 'user'
   - if user_signed_in?
     %li.list-inline-item= link_to current_user.email, current_user
     %li.list-inline-item= link_to t('users.logout'), destroy_user_session_path, method: :delete
