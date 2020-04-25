@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_25_134726) do
+ActiveRecord::Schema.define(version: 2020_04_25_142804) do
+
+  create_table "page_translations", force: :cascade do |t|
+    t.integer "page_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.index ["locale"], name: "index_page_translations_on_locale"
+    t.index ["page_id"], name: "index_page_translations_on_page_id"
+  end
 
   create_table "pages", force: :cascade do |t|
     t.datetime "created_at", null: false

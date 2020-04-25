@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  resources :pages
+
   devise_for :users
 
-  scope '(:locale)', locale: /ru|en/ do
+  scope '(:locale)', locale: /en|ru/ do
+    resources :pages
     root 'main#index'
   end
 end

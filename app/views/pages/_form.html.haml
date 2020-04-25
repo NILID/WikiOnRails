@@ -6,5 +6,9 @@
         - @page.errors.full_messages.each do |message|
           %li= message
 
+  = f.globalize_fields_for locale do |g|
+    = g.label :name, Page.human_attribute_name(:name)
+    ~ g.text_field :name
+
   .actions
     = f.submit 'Save'

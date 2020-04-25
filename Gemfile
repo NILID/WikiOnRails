@@ -20,6 +20,11 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
+gem 'globalize', '~> 5.3.0'
+gem 'globalize-accessors'
+gem 'batch_translations'
+
+
 gem 'meta-tags'
 
 gem "animate-rails"

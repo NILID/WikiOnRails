@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
     I18n.with_locale(locale, &action)
   end
 
+  def default_url_options
+    { locale: I18n.locale }
+  end
+
   private
 
     def extract_locale_from_accept_language_header

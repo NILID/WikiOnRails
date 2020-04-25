@@ -16,6 +16,9 @@ module Wikionrails
     # config.i18n.default_locale = :ru
     config.i18n.available_locales = %i[en ru]
     config.i18n.default_locale = :en
+    config.i18n.enforce_available_locales = false
+    I18n.config.enforce_available_locales = true
+
     config.i18n.fallbacks = true
 
     config.generators do |g|
