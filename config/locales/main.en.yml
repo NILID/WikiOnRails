@@ -1,3 +1,6 @@
 en:
   main:
     other_langs: Languages
+    welcome_first_html: Welcome to %{url},
+    welcome_second: that anyone can edit.
+    to_wiki: Encyclopedia

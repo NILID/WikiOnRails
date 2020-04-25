@@ -1,3 +1,6 @@
 ru:
   main:
     other_langs: На других языках
+    welcome_first_html: Добро пожаловать в %{url},
+    welcome_second: которую может редактировать каждый.
+    to_wiki: Энциклопедию
