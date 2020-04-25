@@ -2,3 +2,4 @@ en:
   users:
     signup: Create account
     login: Log in
+    logout: Log out

@@ -2,3 +2,4 @@ ru:
   users:
     signup: Создать учётную запись
     login: Войти
+    logout: Выйти

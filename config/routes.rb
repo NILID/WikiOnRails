@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   scope '(:locale)', locale: /#{I18n.available_locales.join('|')}/ do
     resources :pages do
-      resources :blocks, except: %i[index show]
+      resources :sections, except: %i[index show]
     end
 
     resources :users, only: %i[index show]
