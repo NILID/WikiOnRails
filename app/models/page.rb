@@ -1,4 +1,6 @@
 class Page < ApplicationRecord
+  has_many :blocks
+
   translates :name
 
   globalize_accessors locales: I18n.available_locales,
@@ -6,5 +8,4 @@ class Page < ApplicationRecord
   accepts_nested_attributes_for :translations
 
   validates :name, presence: true
-
 end

@@ -2,3 +2,4 @@ en:
   actions:
     edit: Edit
     destroy: Destroy
+    save: Save

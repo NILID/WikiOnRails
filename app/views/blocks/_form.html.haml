@@ -1,0 +1,18 @@
+= bootstrap_form_for [@page, @block] do |f|
+  - if @block.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@block.errors.count, "error")} prohibited this block from being saved:"
+      %ul
+        - @block.errors.full_messages.each do |message|
+          %li= message
+
+  = f.globalize_fields_for locale do |g|
+    .form-group
+      = g.label :name, Block.human_attribute_name(:name)
+      ~ g.text_field :name, class: 'form-control'
+
+    .form-group
+      = g.label :content, Block.human_attribute_name(:content)
+      ~ g.text_area :content, class: 'form-control'
+
+  = f.submit 'Save'

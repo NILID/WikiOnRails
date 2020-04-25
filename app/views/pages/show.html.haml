@@ -1,4 +1,4 @@
-%h1.lead.border-bottom= @page.name
+%h1.h3.border-bottom= @page.name
 
 .mb-3.text-right
   %small
@@ -6,3 +6,9 @@
     \|
     = link_to t('actions.destroy'), @page, method: :delete, data: { confirm: 'Are you sure?' }
 
+.row
+  .col.text-center
+    .p-2.bg-light.mb-3
+      = link_to t('blocks.new'), new_page_block_path(@page)
+
+= render @blocks

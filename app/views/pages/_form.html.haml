@@ -7,8 +7,9 @@
           %li= message
 
   = f.globalize_fields_for locale do |g|
-    = g.label :name, Page.human_attribute_name(:name)
-    ~ g.text_field :name
+    .form-group
+      = g.label :name, Page.human_attribute_name(:name)
+      ~ g.text_field :name, class: 'form-control'
 
   .actions
-    = f.submit 'Save'
+    = f.submit t('actions.save')

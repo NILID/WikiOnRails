@@ -2,6 +2,7 @@ ru:
   pages:
     listing: Статьи
     new: Создать статью
+    save: Записать страницу
   plural:
     page_1: статья
     page_2: статьи
