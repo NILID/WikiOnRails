@@ -14,7 +14,7 @@ module Wikionrails
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :ru
-    config.i18n.available_locales = %i[en ru]
+    config.i18n.available_locales = %i[de en es fr ja it pl pt ru zh]
     config.i18n.default_locale = :en
     config.i18n.enforce_available_locales = false
     I18n.config.enforce_available_locales = true
