@@ -1,0 +1,7 @@
+ru:
+  activerecord:
+    models:
+      page: статья
+    attributes:
+      page:
+        name: Название

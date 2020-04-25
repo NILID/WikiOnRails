@@ -9,4 +9,4 @@
             = t 'main.welcome_second'
         .col.text-right
           .mb-3= t 'main.articles_count_now_html', count: link_to(plural(Page.with_translations(I18n.locale).count, 'page'), pages_path)
-          = link_to t('pages.new'), new_page_path, class: 'btn btn-primary'
+          = link_to t('pages.new'), new_page_path, class: 'btn btn-secondary'

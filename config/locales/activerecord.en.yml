@@ -1,0 +1,10 @@
+en:
+  activerecord:
+    models:
+      article: новость
+      address: адрес
+    attributes:
+      address:
+        address: Адрес
+        phone: Телефон
+        worktime: Время работы
