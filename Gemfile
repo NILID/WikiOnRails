@@ -24,6 +24,7 @@ gem 'globalize', '~> 5.3.0'
 gem 'globalize-accessors'
 gem 'batch_translations'
 
+gem 'russian'
 
 gem 'meta-tags'
 

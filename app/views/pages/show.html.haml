@@ -3,4 +3,5 @@
 .mb-3.text-right
   = link_to 'Edit', edit_page_path(@page)
   \|
-  = link_to 'Back', pages_path
+  = link_to 'Destroy', @page, method: :delete, data: { confirm: 'Are you sure?' }
+

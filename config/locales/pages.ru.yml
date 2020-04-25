@@ -1,3 +1,7 @@
 ru:
   pages:
     new: Создать статью
+  plural:
+    page_1: статья
+    page_2: статьи
+    page_10: статей

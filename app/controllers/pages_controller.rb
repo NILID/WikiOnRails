@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   load_and_authorize_resource
 
   def index
+    @pages = @pages.with_translations(I18n.locale)
   end
 
   def show

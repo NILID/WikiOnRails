@@ -1,6 +1,7 @@
 en:
   main:
     other_langs: Languages
+    articles_count_now_html: '%{count} in Encyclopedia'
     welcome_first_html: Welcome to %{url},
     welcome_second: that anyone can edit.
     to_wiki: Encyclopedia

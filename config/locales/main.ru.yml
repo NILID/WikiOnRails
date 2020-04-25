@@ -1,6 +1,7 @@
 ru:
   main:
     other_langs: На других языках
+    articles_count_now_html: 'Сейчас в Энциклопедии %{count}'
     welcome_first_html: Добро пожаловать в %{url},
     welcome_second: которую может редактировать каждый.
     to_wiki: Энциклопедию

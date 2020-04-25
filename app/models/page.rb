@@ -5,4 +5,6 @@ class Page < ApplicationRecord
                    attributes: [:name]
   accepts_nested_attributes_for :translations
 
+  validates :name, presence: true
+
 end
