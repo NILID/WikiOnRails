@@ -3,6 +3,7 @@ en:
     models:
       article: новость
       address: адрес
+      section: section
     attributes:
       address:
         address: Адрес

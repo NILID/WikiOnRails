@@ -1,4 +1,4 @@
-class Block < ApplicationRecord
+class Section < ApplicationRecord
   belongs_to :page
 
   translates :name, :content

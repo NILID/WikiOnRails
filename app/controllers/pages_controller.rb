@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   end
 
   def show
-    @blocks = @page.blocks.with_translations(I18n.locale)
+    @sections = @page.sections.with_translations(I18n.locale)
   end
 
   def new

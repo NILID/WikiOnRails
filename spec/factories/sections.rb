@@ -1,6 +1,6 @@
 FactoryBot.define do
-  factory :block do
-    page { nil }
+  factory :section do
+    page
     position { 1 }
   end
 end

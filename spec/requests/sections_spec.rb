@@ -12,8 +12,8 @@
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
-RSpec.describe "/blocks", type: :request do
-  # Block. As you add validations to Block, be sure to
+RSpec.describe "/sections", type: :request do
+  # Section. As you add validations to Section, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
     skip("Add a hash of attributes valid for your model")
@@ -25,58 +25,58 @@ RSpec.describe "/blocks", type: :request do
 
   describe "GET /index" do
     it "renders a successful response" do
-      Block.create! valid_attributes
-      get blocks_url
+      Section.create! valid_attributes
+      get sections_url
       expect(response).to be_successful
     end
   end
 
   describe "GET /show" do
     it "renders a successful response" do
-      block = Block.create! valid_attributes
-      get block_url(block)
+      section = Section.create! valid_attributes
+      get section_url(section)
       expect(response).to be_successful
     end
   end
 
   describe "GET /new" do
     it "renders a successful response" do
-      get new_block_url
+      get new_section_url
       expect(response).to be_successful
     end
   end
 
   describe "GET /edit" do
     it "render a successful response" do
-      block = Block.create! valid_attributes
-      get edit_block_url(block)
+      section = Section.create! valid_attributes
+      get edit_section_url(section)
       expect(response).to be_successful
     end
   end
 
   describe "POST /create" do
     context "with valid parameters" do
-      it "creates a new Block" do
+      it "creates a new Section" do
         expect {
-          post blocks_url, params: { block: valid_attributes }
-        }.to change(Block, :count).by(1)
+          post sections_url, params: { section: valid_attributes }
+        }.to change(Section, :count).by(1)
       end
 
-      it "redirects to the created block" do
-        post blocks_url, params: { block: valid_attributes }
-        expect(response).to redirect_to(block_url(Block.last))
+      it "redirects to the created section" do
+        post sections_url, params: { section: valid_attributes }
+        expect(response).to redirect_to(section_url(Section.last))
       end
     end
 
     context "with invalid parameters" do
-      it "does not create a new Block" do
+      it "does not create a new Section" do
         expect {
-          post blocks_url, params: { block: invalid_attributes }
-        }.to change(Block, :count).by(0)
+          post sections_url, params: { section: invalid_attributes }
+        }.to change(Section, :count).by(0)
       end
 
       it "renders a successful response (i.e. to display the 'new' template)" do
-        post blocks_url, params: { block: invalid_attributes }
+        post sections_url, params: { section: invalid_attributes }
         expect(response).to be_successful
       end
     end
@@ -88,42 +88,42 @@ RSpec.describe "/blocks", type: :request do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested block" do
-        block = Block.create! valid_attributes
-        patch block_url(block), params: { block: new_attributes }
-        block.reload
+      it "updates the requested section" do
+        section = Section.create! valid_attributes
+        patch section_url(section), params: { section: new_attributes }
+        section.reload
         skip("Add assertions for updated state")
       end
 
-      it "redirects to the block" do
-        block = Block.create! valid_attributes
-        patch block_url(block), params: { block: new_attributes }
-        block.reload
-        expect(response).to redirect_to(block_url(block))
+      it "redirects to the section" do
+        section = Section.create! valid_attributes
+        patch section_url(section), params: { section: new_attributes }
+        section.reload
+        expect(response).to redirect_to(section_url(section))
       end
     end
 
     context "with invalid parameters" do
       it "renders a successful response (i.e. to display the 'edit' template)" do
-        block = Block.create! valid_attributes
-        patch block_url(block), params: { block: invalid_attributes }
+        section = Section.create! valid_attributes
+        patch section_url(section), params: { section: invalid_attributes }
         expect(response).to be_successful
       end
     end
   end
 
   describe "DELETE /destroy" do
-    it "destroys the requested block" do
-      block = Block.create! valid_attributes
+    it "destroys the requested section" do
+      section = Section.create! valid_attributes
       expect {
-        delete block_url(block)
-      }.to change(Block, :count).by(-1)
+        delete section_url(section)
+      }.to change(Section, :count).by(-1)
     end
 
-    it "redirects to the blocks list" do
-      block = Block.create! valid_attributes
-      delete block_url(block)
-      expect(response).to redirect_to(blocks_url)
+    it "redirects to the sections list" do
+      section = Section.create! valid_attributes
+      delete section_url(section)
+      expect(response).to redirect_to(sections_url)
     end
   end
 end

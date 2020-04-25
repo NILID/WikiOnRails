@@ -1,0 +1,13 @@
+.row
+  .col-12
+    .border-bottom
+      .h6.float-left
+        = section.name
+      %small.float-right
+        = link_to t('actions.edit'), edit_page_section_path(@page, section)
+        \|
+        = link_to t('actions.destroy'), [@page, section], method: :delete, data: { confirm: 'Are you sure?' }
+
+      .clearfix
+  .col-12
+    = section.content

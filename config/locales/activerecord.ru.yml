@@ -2,6 +2,7 @@ ru:
   activerecord:
     models:
       page: статья
+      section: раздел
     attributes:
       page:
         name: Название

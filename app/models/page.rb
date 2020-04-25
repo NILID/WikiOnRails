@@ -1,5 +1,5 @@
 class Page < ApplicationRecord
-  has_many :blocks
+  has_many :sections
 
   translates :name
 

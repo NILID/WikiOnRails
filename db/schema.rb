@@ -12,25 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2020_04_25_173457) do
 
-  create_table "block_translations", force: :cascade do |t|
-    t.integer "block_id", null: false
-    t.string "locale", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "name"
-    t.text "content"
-    t.index ["block_id"], name: "index_block_translations_on_block_id"
-    t.index ["locale"], name: "index_block_translations_on_locale"
-  end
-
-  create_table "blocks", force: :cascade do |t|
-    t.integer "page_id"
-    t.integer "position", default: 0
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["page_id"], name: "index_blocks_on_page_id"
-  end
-
   create_table "page_translations", force: :cascade do |t|
     t.integer "page_id", null: false
     t.string "locale", null: false
@@ -44,6 +25,25 @@ ActiveRecord::Schema.define(version: 2020_04_25_173457) do
   create_table "pages", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "section_translations", force: :cascade do |t|
+    t.integer "section_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.text "content"
+    t.index ["locale"], name: "index_section_translations_on_locale"
+    t.index ["section_id"], name: "index_section_translations_on_section_id"
+  end
+
+  create_table "sections", force: :cascade do |t|
+    t.integer "page_id"
+    t.integer "position", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["page_id"], name: "index_sections_on_page_id"
   end
 
   create_table "users", force: :cascade do |t|

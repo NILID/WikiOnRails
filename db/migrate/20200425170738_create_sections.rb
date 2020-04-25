@@ -1,6 +1,6 @@
-class CreateBlocks < ActiveRecord::Migration[5.2]
+class CreateSections < ActiveRecord::Migration[5.2]
   def change
-    create_table :blocks do |t|
+    create_table :sections do |t|
       t.references :page, foreign_key: true
       t.integer :position, default: 0
 
