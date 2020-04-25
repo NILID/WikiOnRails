@@ -1,0 +1,7 @@
+%ul.list-inline.text-right.my-1
+  - if user_signed_in?
+    %li.list-inline-item= link_to current_user.email, current_user
+    %li.list-inline-item= link_to t('users.logout'), destroy_user_session_path, method: :delete
+  - else
+    %li.list-inline-item= link_to t('users.signup'), new_user_registration_path
+    %li.list-inline-item= link_to t('users.login'),  new_user_session_path

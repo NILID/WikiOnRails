@@ -11,6 +11,18 @@
     .container-fluid
       .row
         .col-sm-4.col-md-3.col-lg-2.border-right
-          = image_tag 'logo.png', class: 'img-fluid mt-3'
+          = link_to root_path do
+            = image_tag 'logo.png', class: 'img-fluid mt-3'
+
+          .mt-3
+            .text-muted.border-bottom.mb-1= t 'main.other_langs'
+            %ul.list-unstyled
+              - I18n.available_locales.each do |locale|
+                %li= link_to t("locales.#{locale}"), url_for(locale: locale)
+
         .col
-          = yield
+          .row
+            .col-12
+              = render 'users/userbar'
+            .col-12
+              = yield
