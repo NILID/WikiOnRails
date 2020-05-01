@@ -1,17 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe "sections/edit", type: :view do
+RSpec.describe "pages/1/sections/edit", type: :view do
   before(:each) do
-    @section = assign(:section, Section.create!(
-      page: nil,
-      position: 1
-    ))
+    @section = create(:section)
   end
 
   it "renders the edit section form" do
     render
 
-    assert_select "form[action=?][method=?]", section_path(@section), "post" do
+    assert_select "form[action=?][method=?]", page_section_path(@section.page, @section), "post" do
 
       assert_select "input[name=?]", "section[page_id]"
 

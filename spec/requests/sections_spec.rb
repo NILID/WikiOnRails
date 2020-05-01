@@ -12,9 +12,11 @@
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
-RSpec.describe "/sections", type: :request do
+RSpec.describe "pages/1/sections", type: :request do
   # Section. As you add validations to Section, be sure to
   # adjust the attributes here as well.
+  let(:page) { create(:page) }
+
   let(:valid_attributes) {
     skip("Add a hash of attributes valid for your model")
   }
@@ -23,25 +25,9 @@ RSpec.describe "/sections", type: :request do
     skip("Add a hash of attributes invalid for your model")
   }
 
-  describe "GET /index" do
-    it "renders a successful response" do
-      Section.create! valid_attributes
-      get sections_url
-      expect(response).to be_successful
-    end
-  end
-
-  describe "GET /show" do
-    it "renders a successful response" do
-      section = Section.create! valid_attributes
-      get section_url(section)
-      expect(response).to be_successful
-    end
-  end
-
   describe "GET /new" do
     it "renders a successful response" do
-      get new_section_url
+      get new_page_section_url(page, locale: :en)
       expect(response).to be_successful
     end
   end
@@ -58,12 +44,12 @@ RSpec.describe "/sections", type: :request do
     context "with valid parameters" do
       it "creates a new Section" do
         expect {
-          post sections_url, params: { section: valid_attributes }
+          post page_sections_url(page, locale: :en), params: { section: valid_attributes }
         }.to change(Section, :count).by(1)
       end
 
       it "redirects to the created section" do
-        post sections_url, params: { section: valid_attributes }
+        post page_sections_url(page, locale: :en), params: { section: valid_attributes }
         expect(response).to redirect_to(section_url(Section.last))
       end
     end
@@ -71,12 +57,12 @@ RSpec.describe "/sections", type: :request do
     context "with invalid parameters" do
       it "does not create a new Section" do
         expect {
-          post sections_url, params: { section: invalid_attributes }
+          post page_sections_url(page, locale: :en), params: { section: invalid_attributes }
         }.to change(Section, :count).by(0)
       end
 
       it "renders a successful response (i.e. to display the 'new' template)" do
-        post sections_url, params: { section: invalid_attributes }
+        post page_sections_url(page, locale: :en), params: { section: invalid_attributes }
         expect(response).to be_successful
       end
     end

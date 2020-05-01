@@ -8,5 +8,4 @@ class Section < ApplicationRecord
   accepts_nested_attributes_for :translations
 
   validates :name, :content, presence: true
-
 end

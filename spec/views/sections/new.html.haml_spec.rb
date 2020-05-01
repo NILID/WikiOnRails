@@ -1,11 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "sections/new", type: :view do
+RSpec.describe "pages/1/sections/new", type: :view do
   before(:each) do
-    assign(:section, Section.new(
-      page: nil,
-      position: 1
-    ))
+    assign(:section, build_stubbed(:section))
   end
 
   it "renders new section form" do
