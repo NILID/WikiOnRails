@@ -9,6 +9,10 @@ class PagesController < ApplicationController
     @sections = @page.sections.with_translations(I18n.locale)
   end
 
+  def history
+    @versions = @page.translation_for(I18n.locale).versions.reverse
+  end
+
   def new
   end
 

@@ -1,0 +1,11 @@
+- set_meta_tags title: t('shared.history')
+
+%h1.h3.border-bottom= link_to @page.name, @page
+
+.row
+  .col
+    - if @versions.empty?
+      .text-center.my-5
+        .h3.text-muted= t('history.empty')
+    - else
+      = render(partial: 'version', collection: @versions)

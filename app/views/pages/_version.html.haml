@@ -1,0 +1,15 @@
+.card.mb-4
+  .card-body
+    .text-muted= l(version.created_at, format: "%-d.%m.%Y %H:%M:%S")
+    = link_to version.actor, version.actor if version.actor
+
+    - if version.event == 'update'
+      %ul.list-group.list-group-flush.list-group-sm
+        - version.changeset.each do |changeitem|
+          %li.list-group-item.p-1
+            .row
+              .col
+                %strong= Page.human_attribute_name(changeitem[0])
+              .col= changeitem[1][0] ? content_tag(:span, t('shared.empty'), class: 'text-muted') : changeitem[1][0]
+              .col
+                = changeitem[1][1]

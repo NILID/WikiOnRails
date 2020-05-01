@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-
+  before_action :set_paper_trail_whodunnit
   around_action :set_locale
 
   def set_locale(&action)
@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     { locale: I18n.locale }
+  end
+
+  def user_for_paper_trail
+    current_user ? current_user.email : 'undefined user'  # or whatever
   end
 
   private

@@ -2,6 +2,8 @@
 
 .mb-3.text-right
   %small
+    = link_to t('main.history'), history_page_path(@page)
+    \|
     = link_to t('actions.edit'), edit_page_path(@page)
     \|
     = link_to t('actions.destroy'), @page, method: :delete, data: { confirm: 'Are you sure?' }

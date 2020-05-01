@@ -24,6 +24,10 @@ gem 'globalize', '~> 5.3.0'
 gem 'globalize-accessors'
 gem 'batch_translations'
 
+gem 'paper_trail'
+gem 'globalize-versioning'
+gem 'paper_trail-globalid'
+
 gem 'russian'
 
 gem 'meta-tags'
