@@ -1,18 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe "pages/1/sections/new", type: :view do
+RSpec.describe "sections/new", type: :view do
   before(:each) do
-    assign(:section, build_stubbed(:section))
+    @page  = create(:page)
+    @section = build(:section, page: @page)
   end
 
   it "renders new section form" do
     render
 
-    assert_select "form[action=?][method=?]", sections_path, "post" do
-
-      assert_select "input[name=?]", "section[page_id]"
-
-      assert_select "input[name=?]", "section[position]"
+    assert_select "form[action=?][method=?]", page_sections_path(@page), "post" do
+      assert_select "input[name=?]",    "section[translations_attributes][1][name]"
+      assert_select "textarea[name=?]", "section[translations_attributes][1][content]"
     end
   end
 end

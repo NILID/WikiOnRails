@@ -72,3 +72,10 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 end
+
+# Set locale for view specs, see https://github.com/rspec/rspec-rails/issues/255#issuecomment-2865917
+class ActionView::TestCase::TestController
+  def default_url_options(options = {})
+    {locale: I18n.default_locale}
+  end
+end
