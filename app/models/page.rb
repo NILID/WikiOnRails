@@ -9,4 +9,8 @@ class Page < ApplicationRecord
   accepts_nested_attributes_for :translations
 
   validates :name, presence: true
+
+  def to_param
+    "#{id}-#{name.parameterize}"
+  end
 end
