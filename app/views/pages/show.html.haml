@@ -1,16 +1,23 @@
-%h1.h3.border-bottom= @page.name
+- if @page.translation_for(locale).id?
 
-.mb-3.text-right
-  %small
-    = link_to t('main.history'), history_page_path(@page)
-    \|
-    = link_to t('actions.edit'), edit_page_path(@page)
-    \|
-    = link_to t('actions.destroy'), @page, method: :delete, data: { confirm: 'Are you sure?' }
+  %h1.h3.border-bottom= @page.name
 
-.row
-  .col.text-center
-    .p-2.bg-light.mb-3
-      = link_to t('sections.new'), new_page_section_path(@page)
+  .mb-3.text-right
+    %small
+      = link_to t('main.history'), history_page_path(@page)
+      \|
+      = link_to t('actions.edit'), edit_page_path(@page)
+      \|
+      = link_to t('actions.destroy'), @page, method: :delete, data: { confirm: 'Are you sure?' }
 
-= render @sections
+  .row
+    .col.text-center
+      .p-2.bg-light.mb-3
+        = link_to t('sections.new'), new_page_section_path(@page)
+
+  = render @sections
+
+- else
+  .text-center.my-5
+    .h3.text-muted= t('history.empty')
+    You can #{link_to 'create page', edit_page_path(@page)} on this locale
